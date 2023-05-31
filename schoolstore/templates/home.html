@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+home
+{% endblock %}
+
+{% block content %}
+<style>
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .image-gallery-item {
+        flex-basis: 20%;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .image-gallery-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .image-gallery-item p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .headline {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
+        text-decoration: underline;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .headline u {
+        border-bottom: 2px solid #333;
+    }
+
+    @media (max-width: 768px) {
+        .headline {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+    }
+    .button {
+        text-align: center;
+        margin-top:60px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="headline">
+    <h2>Courses Provided</h2>
+</div>
+
+<div class="image-gallery">
+    <div class="image-gallery-item">
+        <img src="{% static 'images/programming.jpg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Computer Programming</h5></b></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/machinelearning.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Machine Learning</h5></p>
+    </div>
+    <!-- Add more image-gallery-items with images and descriptions -->
+    <!-- Example: -->
+    <div class="image-gallery-item">
+        <img src="{% static 'images/softwareengineer.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Software Engineering</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/computergraphics.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Computer Graphics</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/computerarchitecture.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Computer Architecture</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/artificialinteligence.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Artificial Inteligence</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/fashiondesign.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Fashion Design</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/Sculpture.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Sculpture</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/painting.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Painting</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/FilmStudies.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Film Studies</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/visualarts.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Visual Arts</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/EnglishLiterature.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>English Literature</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/marketing.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Marketing</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/accountancy.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Accountancy</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/economics.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Economics</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/laws.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Bachelor Of Laws</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/management.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Management</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/americanpolitics.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>American Politics</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/Comparativepolitics.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Comparative politics</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/globalpolitics.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Global Politics</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/InternationalRelations.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>International Relations</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/PoliticalEconomy.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Political Economy</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/PoliticalPhilosophy.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Political Philosophy</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/Cognitivepsychology.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Cognitive Psychology</h5></p>
+    </div>
+    <div class="image-gallery-item">
+        <img src="{% static 'images/socialpsycology.jpeg' %}" height="200px" width="250px" alt="Image 1">
+        <p><h5>Social Psychology</h5></p>
+    </div>
+</div>
+{% if user.is_authenticated %}
+<p class="button"><b>logged in as {{user.username}}</b></p>
+{% else %}
+<div class="button">
+    <a class="btn btn-success" href="{% url 'loginapp:login' %}">Login</a>
+</div>
+{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form1</title>
+    <style>
+        #name,#email,#Name,#pass{color:blue;
+        padding:20px;
+        }
+        #button{padding:20px;
+        }
+        .container {
+			display: flex;
+			justify-content: center;
+			height: 70vh;
+        }
+        form {
+			width: 50%;
+			padding: 20px;
+			border: 2px solid black;
+			border-radius: 10px;
+			background-color: #f1f1f1;
+		}
+		h2{
+		    text-align:center;
+		}
+		.logout-button {
+            color: white;
+            background-color: grey;
+            padding: 6px 11px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-left: 10px;
+    </style>
+</head>
+<body>
+<h2><u>Register Your Account</u></h2>
+<div class="container">
+<form action="" method="POST">
+    {% csrf_token %}
+    <div id="name">
+    <label>User name</label>
+    <input type="text" name="username" placeholder="enter your user name">
+    </div>
+    <div id="pass">
+    <label>enter password</label>
+    <input type="password" name="pass1" placeholder="enter your password">
+    </div>
+    <div id="pass">
+    <label>confirm password</label>
+    <input type="password" name="pass2" placeholder="re-enter your password">
+    </div>
+    <div id="button">
+    <input type="submit">
+    </div>
+    <div>
+    &nbsp;&nbsp;<a href="{% url 'schoolapp:base' %}" class="logout-button">Home</a>
+    </div>
+</div>
+
+
+</form>
+{% for i in messages %}
+{{i}}
+{% endfor %}
+</body>
+</html>

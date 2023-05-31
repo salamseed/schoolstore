@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .order-confirmed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            animation: fade-in 1s ease-in-out;
+        }
+
+        .order-confirmed h2 {
+            font-size: 32px;
+            color: #555;
+            text-align: center;
+            animation: scale-up 0.5s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .tick-symbol {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        .continue-shopping-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .continue-shopping-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scale-up {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="order-confirmed">
+        <h2>Your Order is Confirmed</h2>
+        <span class="tick-symbol">&#10004;</span>
+        <a href="{% url 'schoolapp:base' %}" class="continue-shopping-button">Return to home</a>
+    </div>
+</body>
+</html>

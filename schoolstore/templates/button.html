@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} place order {% endblock %}
+{% block content %}
+
+
+  <style>
+    .button-container {
+      text-align: center;
+    }
+
+    .button-container a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <br><br><br><br><br><br><br><br><br><br>
+  <div class="button-container">
+    <p><b>Click the continue button for redirect to Form page</b></p>
+    <a href="{% url 'schoolapp:form' %}">Continue</a>
+  </div>
+{% endblock %}
+
+
+

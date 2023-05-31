@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="date"],
+    .form-container input[type="number"],
+    .form-container input[type="email"],
+    .form-container select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-container select {
+      height: 36px;
+    }
+
+    .form-container input[type="checkbox"] {
+      margin-bottom: 5px;
+    }
+
+    .form-container .checkbox-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-container .checkbox-column {
+      width: 45%;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .logout-button {
+      color: white;
+      background-color: red;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Fill this form</h2>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="dob">DOB:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+        <option value="">Select Department</option>
+        <option value="computer-science">Computer Science</option>
+        <option value="arts">Arts</option>
+        <option value="commerce">Commerce</option>
+        <option value="political-science">Political Science</option>
+        <option value="psychology">Psychology</option>
+      </select>
+
+      <label for="courses">Courses:</label>
+      <select id="courses" name="courses" required>
+        <option value="">Select Course</option>
+      </select>
+
+      <label for="purpose">Purpose:</label>
+      <select id="purpose" name="purpose" required>
+        <option value="">Select Purpose</option>
+        <option value="enquiry">For Enquiry</option>
+        <option value="order">Place Order</option>
+        <option value="return">Return</option>
+      </select>
+
+      <label>Materials Provide:</label><br>
+      <div class="checkbox-group">
+        <div class="checkbox-column">
+          <input type="checkbox" id="notebook" name="materials" value="Notebook">
+          <label for="notebook">Notebook</label><br>
+          <input type="checkbox" id="pen" name="materials" value="Pen">
+          <label for="pen">Pen</label><br>
+          <input type="checkbox" id="pencil" name="materials" value="Pencil">
+          <label for="pencil">Pencil</label><br>
+          <input type="checkbox" id="exam-papers" name="materials" value="Exam Papers">
+          <label for="exam-papers">Exam Papers</label><br>
+          <input type="checkbox" id="ruler" name="materials" value="Ruler">
+          <label for="ruler">Ruler</label><br>
+        </div>
+        <div class="checkbox-column">
+          <input type="checkbox" id="calculator" name="materials" value="Calculator">
+          <label for="calculator">Calculator</label><br>
+          <input type="checkbox" id="highlighter" name="materials" value="Highlighter">
+          <label for="highlighter">Highlighter</label><br>
+          <input type="checkbox" id="sticky-notes" name="materials" value="Sticky Notes">
+          <label for="sticky-notes">Sticky Notes</label><br>
+          <input type="checkbox" id="scissors" name="materials" value="Scissors">
+          <label for="scissors">Scissors</label><br>
+          <input type="checkbox" id="glue" name="materials" value="Glue">
+          <label for="glue">Glue</label><br>
+        </div>
+      </div>
+
+      <script>
+        var departmentSelect = document.getElementById("department");
+        var coursesSelect = document.getElementById("courses");
+
+        departmentSelect.addEventListener("change", function() {
+          coursesSelect.innerHTML = "";
+
+          var department = this.value;
+          var courses = [];
+
+          switch (department) {
+            case "computer-science":
+              courses = [
+                "Software Engineering",
+                "Artificial Intelligence",
+                "Computer Programming",
+                "Machine Learning",
+                "Computer Graphics",
+                "Computer Architecture"
+              ];
+              break;
+            case "arts":
+              courses = [
+                "Visual Arts",
+                "Fashion Design",
+                "Painting",
+                "Sculpture",
+                "Film Studies",
+                "English Literature"
+              ];
+              break;
+            case "commerce":
+              courses = [
+                "Accountancy",
+                "Management",
+                "Marketing",
+                "Bachelor of Economics",
+                "Economics",
+                "Bachelor of Laws"
+              ];
+              break;
+            case "political-science":
+              courses = [
+                "Comparative politics",
+                "Political philosophy",
+                "International Relations",
+                "Global politics",
+                "American politics",
+                "Political Economy"
+              ];
+              break;
+            case "psychology":
+              courses = [
+                "Social psychology",
+                "Cognitive psychology",
+                "Educational psychology",
+                "Abnormal psychology",
+                "Personality psychology",
+                "Behavioral neuroscience"
+              ];
+              break;
+          }
+
+          courses.forEach(function(course) {
+            var option = document.createElement("option");
+            option.value = course;
+            option.textContent = course;
+            coursesSelect.appendChild(option);
+          });
+        });
+      </script>
+
+      <input type="submit" value="Submit">
+      <a href="{% url 'loginapp:logout' %}" class="logout-button">Logout</a>
+    </form>
+  </div>
+</body>
+</html>
